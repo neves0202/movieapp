@@ -1,0 +1,24 @@
+
+open google chrome
+
+click on location bar
+
+enter www.gmail.com
+
+wait for page to load
+
+if there is any new mail
+	then open the first email
+
+	while there is still new mail
+		if i need to reply
+			then type a response
+		else
+			close the email
+		end
+	end
+
+else
+
+
+end
