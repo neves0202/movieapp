@@ -1,40 +1,43 @@
-puts "Welcome to the secret number game!"
-puts "This game was created by Brooks"
-puts
+require_relative 'lib/player.rb' #creates a link to the Player class.
+require_relative 'lib/test.rb'	#creates a link to the Secret Number class.
+require_relative 'lib/secret_number.rb'	#creates a link to the Secret Number class.
+
+
+
+def show_message
+	puts "Welcome to the secret number game!"
+	puts "This game was created by Neves"
+	puts
+end
+
+
+
+show_message
+
 
 puts "What's your name?"
 name = gets.strip.capitalize
 
-puts "Okay #{name}, so here are the rules:"
-puts " You must guess a number between one and ten"
-puts " You will only have three tries to get it right"
-puts
-
-secret_number = rand(1..10)
-guesses_left = 3
+player = Player.new(name)
+test = Test.new(name)
+secret_number = Secret_number.new
+guesses_left = Secret_number.new
+next_guess = Secret_number.new
 
 
-def try_again(guesses_left, next_guess)
-  puts "Sorry, that's not it..."
-  puts "You have #{guesses_left} #{guesses_left > 1 ? 'guesses' : 'guess'} left." if guesses_left > 1
-  puts "Guess #{next_guess}!" if guesses_left > 0
-  puts
-end
 
-while guesses_left > 0
-  puts "What's your guess?"
-  guess = gets.strip.to_i
+puts "#{test.name}"
 
-  if guess == secret_number
-    puts "YOU WON!"
-    exit
-  elsif guess > secret_number
-    guesses_left -= 1
-    try_again(guesses_left, "lower")
-  elsif guess < secret_number
-    guesses_left -= 1 
-    try_again(guesses_left, "higher")
-  end
-end
 
-puts "Game over. You didn't correctly guess the number. It was #{secret_number}, duh."
+
+
+test.tell(name)
+
+
+secret_number.number
+
+secret_number.try_again(guesses_left,next_guess)
+
+
+
+
