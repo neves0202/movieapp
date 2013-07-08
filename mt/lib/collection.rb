@@ -9,7 +9,7 @@ class Collection
   	def self.prod
 
 
-	 puts "#{ SaleCenter.bales.each { |sale| sale } }"
+	 puts "#{ SaleCenter.products.each { |sale| sale } }"
 
 	  pro = JSON.load(RestClient.get(
 		
