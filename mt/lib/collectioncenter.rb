@@ -1,3 +1,5 @@
+#Array to save the data into a products array.
+
 class CollectionCenter
   @@products = []
 
@@ -8,7 +10,7 @@ class CollectionCenter
 
   def self.products
     @@products.map do |product|
-      "Sales: #{product.origin}, Category: (#{sale.description}), Products: (#{product.origin})"
+      "Sales: #{product.origin}, Products: (#{product.origin})" #Will use this block in the future to call the specific info about a product.
     end
   end
 end

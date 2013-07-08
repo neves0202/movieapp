@@ -1,3 +1,5 @@
+# api request to get the data for sales and store it in sale array in the Sale Class
+
 require 'json'
 require 'rest-client'
 require_relative 'sale'
@@ -7,17 +9,9 @@ class RemoteSource
   def self.get
     res = JSON.load(RestClient.get('https://api.gilt.com/v1/sales/active.json?apikey=dfae32d1deba6f2e4ffdc2f7c8ed2c07'))
     res["sales"].map do |sale|
-      Sale.new sale["name"], sale["description"], sale["products"]
+      Sale.new sale["name"], sale["description"], sale["products"] #stores the sale informations into an array
     end
   end
-
-
-	def self.prod
-	  pro = JSON.load(RestClient.get('sale.products.each { |x| return = x }'))
-      pro["products"].map do |products|
-      	 Products.new products["origin"]
-     end
-	end
 
 
 end
