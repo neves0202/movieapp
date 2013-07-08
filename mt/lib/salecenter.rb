@@ -11,4 +11,13 @@ class SaleCenter
       "Sales: #{sale.name}, Category: (#{sale.description}), Products: (#{sale.products})"
     end
   end
+
+    def self.products
+    @@sales.map do |sale|
+      sale.products.each {|x| x}
+    end
+  end
+
+
+
 end
