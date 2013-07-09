@@ -2,17 +2,13 @@
 
 class Sale
 
-	attr_accessor :name, :description, :store, :case
+	attr_accessor :name, :description, :products
 
-		def initialize(name, description, store)
+		def initialize(name, description, products)
 			@name = name
 			@description = description
-			@store = store
+			@products = products
 		end
 
 
-
 end
-
-
-	

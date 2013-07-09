@@ -9,18 +9,37 @@ class SaleCenter
     @@sales << sale  # adds each instance of sale into the array
   end
 
-  def self.sales
+  def self.saleswomen
     @@sales.map do |sale|
-      "Sales: #{sale.name}, Category: (#{sale.description}), Products: (#{sale.products})"  #for each instance this runs and displays the attributes
-    end
+    	if "#{sale.store}" == "women"
+      		puts "Women Sales: #{sale.name}"  #for each instance this runs and displays womens sales
+    	end
+  	end
   end
 
-    def self.products   
-    @@sales.map do |sale|    
-      sale.products.each {|x| x} #for each instance of sale this loop runs and returns each instance of the product json
-    end
+  def self.salesmen
+    @@sales.map do |sale|
+    	if "#{sale.store}" == "men"
+      		puts "Men's Sales: #{sale.name}"  #for each instance this runs and displays mens sales
+    	end
+  	end
   end
 
+  def self.saleskids
+    @@sales.map do |sale|
+    	if "#{sale.store}" == "kids"
+      		puts "Baby & Kids Sales: #{sale.name}"  #for each instance this runs and displays kids sales
+    	end
+  	end
+  end
+
+  def self.saleshome
+    @@sales.map do |sale|
+    	if "#{sale.store}" == "home"
+      		puts "Home Sales: #{sale.name}"  #for each instance this runs and displays home sales
+    	end
+  	end
+  end
 
 
 end
