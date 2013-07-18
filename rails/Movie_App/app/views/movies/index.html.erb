@@ -1,0 +1,23 @@
+
+
+  <h1>My Movies</h1>
+
+
+
+<%= form_tag '/movies', method: "GET" do  %>
+	<%= label_tag :query, "Search:" %>
+	<%=text_field_tag :query, params[:query] %>
+	<%= submit_tag "Search" %>
+<%end%>
+
+<br>
+
+
+
+<div>
+  <% @movies.each do |movie| %>
+    <h4>
+      <%=link_to movie.title, movie_path(movie) %> <span>&#8594;</span></h4>
+    </h4>
+  <% end %>
+</div>

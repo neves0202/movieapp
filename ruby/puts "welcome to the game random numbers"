@@ -1,0 +1,22 @@
+
+puts "welcome to the game random numbers"
+puts "Enter your name"
+name = gets.chomp
+puts  "hi #{name}""
+
+
+puts "Enter your name"
+name = gets.chomp
+def say(name)
+puts "Hi #{name}"
+end
+
+
+
+def say_hello_to(name)
+    
+end
+
+say_hello_to 
+
+say_hello_to "John" 
