@@ -1,0 +1,22 @@
+<h1>Geek Therapy</h1>
+
+<%= form_tag '/articles', method: "GET" do %>
+	<%= label_tag :query, "Search:" %>
+	<%= text_field_tag :query %>
+	<% submit_tag "Search" %>
+<% end %>
+
+</br>
+
+<div>
+
+	<% @articles.each do |article| %>
+		<h4><%=link_to article.questions, article_path(article) %></h4>
+		<p><%=article.category%></p>
+		<p><%=article.description%></p>
+	<% end %>
+
+
+
+
+</div>

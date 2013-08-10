@@ -1,0 +1,5 @@
+Article.create questions: "Rushed to Market", description: "Meta Article showing Warning about inability to load Article", category: "rushed_to_market.png"
+Article.create questions: "Darwin's Delight", description: "Darwin with paper cutouts of evolution", category: "darwins_delight.png"
+Article.create questions: "Victory through Chaos", description: "Button Masher's Manifesto", category: "victory_through_chaos.png"
+Article.create questions: "Console Wars", description: "Gaming consoles as Star Wars battle vehicles", category: "console_wars.png"
+Article.create questions: "Downtime", description: "Lightsabers charging at an outlet", category: "downtime.png"
