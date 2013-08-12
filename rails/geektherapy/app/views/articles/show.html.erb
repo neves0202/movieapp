@@ -1,0 +1,10 @@
+<h1><%= @article.questions %></h1>
+<h3> <%= @article.category %></h3>
+<p> <%= @article.description %></p>
+
+
+<%= link_to 'Edit', edit_article_path(@article)%>
+
+
+<%= link_to "Destroy", article_path(@article),
+ :confirm =>"Are you sure?", :method => :delete %>

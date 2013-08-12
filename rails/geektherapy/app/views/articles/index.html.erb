@@ -12,11 +12,10 @@
 
 	<% @articles.each do |article| %>
 		<h4><%=link_to article.questions, article_path(article) %></h4>
-		<p><%=article.category%></p>
-		<p><%=article.description%></p>
+		<h3><%=article.category%></h3>
 	<% end %>
 
 
-
-
 </div>
+
+<%= link_to 'New Article', new_article_path %>
