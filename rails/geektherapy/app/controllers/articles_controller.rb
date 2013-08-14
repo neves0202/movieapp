@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
 	before_action :load_article, :only => [:edit, :update, :show, :destroy]
-	before_action :authenticate_user!, only: [:new, :create]
+	before_action :authenticate_user!, only: [:new, :create, :edit]
 
 	def index 
 		@articles = Article.search_for(params[:query])
