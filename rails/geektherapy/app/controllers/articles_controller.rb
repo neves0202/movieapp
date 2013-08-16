@@ -1,15 +1,22 @@
 class ArticlesController < ApplicationController
 	before_action :load_article, :only => [:edit, :update, :show, :destroy]
-	before_action :authenticate_user!, only: [:new, :create, :edit]
+	before_action :authenticate_user!, only: [:new, :create]
+
+
 
 	def index 
-		@articles = Article.search_for(params[:query])
+		#@articles = @articles.points.descending.since(5.days.ago)
+
+		@articles = Article.in_points_order.search_for(params[:query])
 	end
 
 	def show
 		if params[:destroy]
     		render 'index' and return
 		end
+		@article.points += 100
+		@article.views += 1
+		@article.save
   	end
 
 
@@ -31,7 +38,6 @@ class ArticlesController < ApplicationController
 
 	def create
 		@article = Article.new(article_params)
-		
 		if @article.save
 			redirect_to @article
 		else

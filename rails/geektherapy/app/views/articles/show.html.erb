@@ -1,10 +1,30 @@
 <h1><%= @article.questions %></h1>
 <h3> <%= @article.category %></h3>
+<p> <%= @article.points %></p>
+<p> <%= @article.views %></p>
 <p> <%= @article.description %></p>
 
 
 <%= link_to 'Edit', edit_article_path(@article)%>
 
 
-<%= link_to "Destroy", article_path(@article),
+<%= link_to "Delete", article_path(@article),
  :confirm =>"Are you sure?", :method => :delete %>
+
+
+
+<h3>Comments:</h3>
+
+<ul>
+  <% @article.comments.each do |comment| %>
+
+    <div><h6><%=comment.user.email%></h6>
+    <p> <%=comment.body%></p></div>
+  <% end %>
+</ul>
+</br>
+</br>
+<%= render 'comments/form' %>
+
+
+

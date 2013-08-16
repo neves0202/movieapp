@@ -14,7 +14,8 @@ Geektherapy::Application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
      root 'articles#index'
-     resources :articles
+ #    resources :articles
+ # resources :comments
 
   # Example resource route with options:
   #   resources :products do
@@ -29,10 +30,9 @@ Geektherapy::Application.routes.draw do
   #   end
 
   # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
+    resources :articles do
+      resources :comments
+    end
 
   # Example resource route with more complex sub-resources:
   #   resources :products do

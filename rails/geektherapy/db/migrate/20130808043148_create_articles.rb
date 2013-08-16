@@ -4,6 +4,7 @@ class CreateArticles < ActiveRecord::Migration
       t.text :questions
       t.text :description
       t.string :category
+     
 
       t.timestamps
     end
